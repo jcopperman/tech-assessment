@@ -67,17 +67,19 @@ namespace TodoList.Tests.Specs
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("View a shared todo-list")]
         [NUnit.Framework.CategoryAttribute("smoketest")]
+        [NUnit.Framework.CategoryAttribute("functional")]
         public virtual void ViewASharedTodo_List()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("View a shared todo-list", new string[] {
-                        "smoketest"});
-#line 7
-this.ScenarioSetup(scenarioInfo);
+                        "smoketest",
+                        "functional"});
 #line 8
- testRunner.Given("I have opened the todo-list app", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 9
- testRunner.When("The todo-list view has loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I have opened the todo-list app", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
+ testRunner.When("The todo-list view has loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 11
  testRunner.Then("I should see the list of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -92,13 +94,32 @@ this.ScenarioSetup(scenarioInfo);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("View a shared todo-list multiple users", new string[] {
                         "smoketest",
                         "loadtest"});
-#line 14
-this.ScenarioSetup(scenarioInfo);
 #line 15
- testRunner.Given("I have opened the todo-list app with multiple users", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+this.ScenarioSetup(scenarioInfo);
 #line 16
- testRunner.When("The todo-list view has loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I have opened the todo-list app with multiple users", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 17
+ testRunner.When("The todo-list view has loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
+ testRunner.Then("I should see the list of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("View a shared todo-list with x amount of users")]
+        [NUnit.Framework.CategoryAttribute("nnbindedtest")]
+        public virtual void ViewASharedTodo_ListWithXAmountOfUsers()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("View a shared todo-list with x amount of users", new string[] {
+                        "nnbindedtest"});
+#line 21
+this.ScenarioSetup(scenarioInfo);
+#line 22
+ testRunner.Given("I have opened the todo-list app with multiple users", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 23
+ testRunner.When("The todo-list view has loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 24
  testRunner.Then("I should see the list of items", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

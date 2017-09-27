@@ -12,7 +12,7 @@ namespace TodoList.Tests
             ScenarioContext.Current.Pending();
         }
         
-        [Given(@"I create a new task")]
+        [Given(@"I create a new task with a description of '(.*)'")]
         public void GivenICreateANewTask()
         {
             ScenarioContext.Current.Pending();

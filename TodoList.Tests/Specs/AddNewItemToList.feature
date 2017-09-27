@@ -6,6 +6,6 @@
 @functional
 Scenario: Add a todo list task
 	Given I have opened the todo-list app
-	And I create a new task
+	And I create a new task with a description of 'Data driven input'
 	When I press submit
 	Then the new data is added to the list

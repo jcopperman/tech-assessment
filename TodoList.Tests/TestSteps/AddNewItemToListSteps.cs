@@ -1,33 +1,34 @@
 ﻿using System;
 using TechTalk.SpecFlow;
+using TodoList.Tests.PageModels;
 
 namespace TodoList.Tests
 {
     [Binding]
-    public class AddNewItemToListSteps
+    public class AddNewItemToListSteps : TodoItemIndex
     {
         [Given(@"I have opened the todo-list app")]
         public void GivenIHaveOpenedTheTodo_ListApp()
         {
-            ScenarioContext.Current.Pending();
+            NavigateToWebApp();
         }
         
         [Given(@"I create a new task with a description of '(.*)'")]
-        public void GivenICreateANewTask()
+        public void GivenICreateANewTask(string description)
         {
-            ScenarioContext.Current.Pending();
+            EnterValidDescrition(description);
         }
         
         [When(@"I press submit")]
         public void WhenIPressSubmit()
         {
-            ScenarioContext.Current.Pending();
+            ClickSubmitButton();
         }
         
         [Then(@"the new data is added to the list")]
         public void ThenTheNewDataIsAddedToTheList()
         {
-            ScenarioContext.Current.Pending();
+            VerifyRecentlyCreatedTodoItem();
         }
     }
 }

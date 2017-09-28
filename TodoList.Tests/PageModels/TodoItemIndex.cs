@@ -4,7 +4,7 @@ using OpenQA.Selenium.Support.PageObjects;
 
 namespace TodoList.Tests.PageModels
 {
-    public class TodoItems
+    public class TodoItemIndex
     {
         [FindsBy(How = How.Id, Using = "newtodo")]
         IWebElement txtTodo{ get; set; }
@@ -41,6 +41,11 @@ namespace TodoList.Tests.PageModels
         internal void NavigateToWebApp()
         {
             IWebDriver driver = new IWebDriver
+        }
+
+        internal void InjectHtmlIntoDescription(string code)
+        {
+            txtTodo.SendKeys(code);
         }
     }
 }

@@ -52,7 +52,7 @@ Explain what you have done here and why...
 2. Identified code injection vulnerability, started with an automated test but would prefer a more robust approach. I suspect there is other XSS vulnerability that I missed.
 
 ## Solution
-- Tech used in this assessment:
+Tech used in this assessment:
 - .NET 4 (C#) 
 - Selenium - Browser automation
 - SpecFlow - BDD documentation

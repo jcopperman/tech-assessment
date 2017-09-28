@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace TodoList.Tests.PageModels
@@ -7,16 +8,18 @@ namespace TodoList.Tests.PageModels
     public class TodoItemIndex
     {
         [FindsBy(How = How.Id, Using = "newtodo")]
-        IWebElement txtTodo{ get; set; }
+        IWebElement txtTodo { get; set; }
 
         [FindsBy(How = How.XPath, Using = "/html/body/form/p/input[2]")]
-        IWebElement btnSubmit { get; set; } 
-        
+        IWebElement btnSubmit { get; set; }
+
         [FindsBy(How = How.XPath, Using = "/html/body/ul/li/text()")]
         IWebElement txtTodoCreated { get; set; }
 
         [FindsBy(How = How.LinkText, Using = "/todo/delete/0")]
         IWebElement lnkDelete { get; set; }
+
+        IWebDriver driver = new FirefoxDriver();
 
         internal void EnterValidDescrition(string description)
         {
@@ -28,11 +31,6 @@ namespace TodoList.Tests.PageModels
             btnSubmit.Click();
         }
 
-        internal void VerifyRecentlyCreatedTodoItem(string description)
-        {
-            Assert.Contains(txtTodoCreated.Text, description);
-        }
-
         internal void DeleteRecentlyCreatedItem()
         {
             lnkDelete.Click();
@@ -40,12 +38,22 @@ namespace TodoList.Tests.PageModels
 
         internal void NavigateToWebApp()
         {
-            IWebDriver driver = new IWebDriver
+            driver.Navigate().GoToUrl("http://localhost:8080/todo");
+        }
+
+        internal void DisposeDriver()
+        {
+            driver.Quit();
         }
 
         internal void InjectHtmlIntoDescription(string code)
         {
             txtTodo.SendKeys(code);
+        }
+
+        internal void VerifyXSSInjectionValidation()
+        {
+           
         }
     }
 }
